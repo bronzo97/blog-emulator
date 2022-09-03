@@ -1,7 +1,7 @@
 <template>
     <div>
         <TheNavbar></TheNavbar>
-        <h1>Pagina vue funzionante</h1>
+        <router-view></router-view>
         <TheFooter></TheFooter>
     </div>
 </template>
@@ -11,6 +11,11 @@ import TheNavbar from '../components/TheNavbar.vue';
 import TheFooter from '../components/TheFooter.vue';
 
     export default {
-    components: { TheNavbar, TheFooter }
+    components: { TheNavbar, TheFooter },
+    data() {
+    return {
+    page: "home",
+    }
+}
 }
 </script>
