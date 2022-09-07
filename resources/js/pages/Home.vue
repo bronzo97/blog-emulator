@@ -3,8 +3,10 @@
         <h2 class="text-center">Pagina Home</h2>
         <div class="container">
             <div v-for="post in posts" :key="post.id" class="m-3">
-                <h3 class="post-title">{{ post.title }}</h3>
-                <p class="post-content">{{ post.content }}</p>
+                <router-link :to="{name: 'posts.show', params: { post_slug: post.slug}}">
+                    <h3 class="post-title">{{ post.title }}</h3>
+                    <p class="post-content">{{ post.content }}</p>
+                </router-link>
                 <p>Post creado da <router-link :to="{ name:'user.posts', params: {'user_id': post.user.id} }">{{ post.user.name }}</router-link> il {{ new Intl.DateTimeFormat("it-IT", {dateStyle: "long"}).format(new Date(post.created_at)) }}</p>
             </div>
             <div class="text-center m-3" v-if="paginationData.current_page < paginationData.last_page">

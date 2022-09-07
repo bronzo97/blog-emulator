@@ -6,6 +6,7 @@ import About from "./pages/About.vue"
 import Contact from "./pages/Contact.vue"
 import PageNotFound from "./pages/PageNotFound.vue"
 import UserPosts from "./pages/UserPosts.vue"
+import PostShow from "./pages/PostShow.vue"
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,12 @@ const routes = [
         title: "Home Blog",
         subtitle: "A Blog made by class #65",
         bgImage: "home-bg.jpg",
+        }
+    },
+    { path: "/posts/:post_slug", component: PostShow, name: "posts.show", 
+    meta: {
+        title: "Dettagli post",
+        subtitle: "Dettagli del post #",
         }
     },
     { path: "/:user_id/posts", component: UserPosts, name: "user.posts", 
