@@ -1,8 +1,10 @@
 <template>
     <div class="container">
         <div>
-            <h4>Categorie: </h4>
-            <h5>Tags: </h5> 
+            <h4 v-if="post.category">Categoria: {{ post.category.name }} </h4>
+            <h5 v-if="post.tags && post.tags.length > 0">Tags: 
+            <div class="badge text-bg-info" v-for="tag in post.tags" :key="tag.id">{{ tag.name }}</div>
+        </h5>
         </div>
         <div v-html="post.content"></div>
 

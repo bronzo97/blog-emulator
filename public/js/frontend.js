@@ -2397,9 +2397,9 @@ var render = function render() {
   }, [_c("a", {
     staticClass: "navbar-brand",
     attrs: {
-      href: "#"
+      href: "/"
     }
-  }, [_vm._v("Navbar")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v("Blog Emulator")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
     attrs: {
       id: "navbarNavDropdown"
@@ -2658,19 +2658,19 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("div", [_vm.post.category ? _c("h4", [_vm._v("Categoria: " + _vm._s(_vm.post.category.name) + " ")]) : _vm._e(), _vm._v(" "), _vm.post.tags && _vm.post.tags.length > 0 ? _c("h5", [_vm._v("Tags: \n        "), _vm._l(_vm.post.tags, function (tag) {
+    return _c("div", {
+      key: tag.id,
+      staticClass: "badge text-bg-info"
+    }, [_vm._v(_vm._s(tag.name))]);
+  })], 2) : _vm._e()]), _vm._v(" "), _c("div", {
     domProps: {
       innerHTML: _vm._s(_vm.post.content)
     }
   })]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("h4", [_vm._v("Categorie: ")]), _vm._v(" "), _c("h5", [_vm._v("Tags: ")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
